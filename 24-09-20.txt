@@ -1,0 +1,74 @@
+pos=-1
+
+def search (list,n):
+    i=0
+
+    while i<len(list):
+        if list[i]==n:
+            globals()['pos']=i
+            return True
+        i=i+1
+
+    return False
+
+list=[5,8,4,6,9,2]
+n=9
+
+if search(list,n):
+    print("found at",pos+1)
+else:
+    print("not found")
+
+
+
+#2
+def linearsearch(arr,elem):
+    for i in range(len(arr)):
+        if(arr[i] == elem):
+            return i+1
+        else:
+            continue
+    return -1
+    
+limit = int(input("Enter the limit : "))
+arry = []
+for i in range(0,limit):
+    ele = input("Enter alphabet : ")
+    arry.append(ele)
+    
+findele = input('Enter element to find : ')
+pos = str(linearsearch(arry,findele))
+print("The element found at index "+pos)
+
+
+
+
+#3
+pos=-1
+
+def search(list,n):
+
+    l=0
+    u=len(list)-1
+
+    while l<=u:
+        mid=(l+u)//2
+
+        if list[mid]==n:
+            globals()['pos']=mid
+            return True
+        else:
+            if list[mid]<n:
+                l=mid+1
+            else:
+                u=mid-1
+    return False
+
+
+list=[1,7,8,4,12,45,99,702,10987,54866]
+n=45
+
+if search(list,n):
+    print("found at",pos+1)
+else:
+    print("not found")
